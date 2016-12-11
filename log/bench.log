@@ -1,0 +1,57 @@
+##Plain
+------------------------
+contiguous float add single thread:
+0.0070488452911377
+contiguous float add multi-thread:
+0.0073728561401367
+contiguous double add single thread:
+0.006619930267334
+contiguous double add multi-thread:
+0.0079340934753418
+
+contiguous float mul single thread:
+0.005828857421875
+contiguous float mul multi-thread:
+0.0075111389160156
+contiguous double mul single thread:
+0.0064830780029297
+contiguous double mul multi-thread:
+0.0080108642578125
+
+contiguous float div single thread:
+0.021599054336548
+contiguous float div multi-thread:
+0.025215864181519
+contiguous double div single thread:
+0.024505138397217
+contiguous double div multi-thread:
+0.028341054916382
+
+##AVX
+------------------------
+contiguous float add single thread:
+0.0031750202178955
+contiguous float add multi-thread:
+0.003593921661377
+contiguous double add single thread:
+0.0044682025909424
+contiguous double add multi-thread:
+0.0051810741424561
+
+contiguous float mul single thread:
+0.0030009746551514
+contiguous float mul multi-thread:
+0.0038130283355713
+contiguous double mul single thread:
+0.0045609474182129
+contiguous double mul multi-thread:
+0.0052440166473389
+
+contiguous float div single thread:
+0.0058028697967529
+contiguous float div multi-thread:
+0.007267951965332
+contiguous double div single thread:
+0.012603998184204
+contiguous double div multi-thread:
+0.014724016189575

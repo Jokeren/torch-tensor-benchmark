@@ -13,7 +13,7 @@ end
 print(tm:time().real)
 
 --sz_single * OMP_NUM_THREADS
-sz_multi = sz_single * 24
+sz_multi = sz_single * 12
 input1multi = torch.randn(sz_multi)
 print("contiguous float div multi-thread:")
 tm = torch.Timer()
@@ -33,7 +33,7 @@ for i=1,100 do
 end
 print(tm:time().real)
 
-sz_multi = sz_single * 24
+sz_multi = sz_single * 12
 input1multi = torch.randn(sz_multi)
 print("contiguous double div multi-thread:")
 tm = torch.Timer()

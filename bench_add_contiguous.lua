@@ -13,7 +13,7 @@ end
 print(tm:time().real)
 
 --sz_single * OMP_NUM_THREADS
-sz_multi = sz_single * 24
+sz_multi = sz_single * 12
 input1multi = torch.randn(sz_multi)
 print("contiguous float add multi-thread:")
 tm = torch.Timer()
@@ -34,7 +34,7 @@ end
 print(tm:time().real)
 
 --sz_single * OMP_NUM_THREADS
-sz_multi = sz_single * 24
+sz_multi = sz_single * 12
 input1multi = torch.randn(sz_multi)
 print("contiguous double add multi-thread:")
 tm = torch.Timer()
