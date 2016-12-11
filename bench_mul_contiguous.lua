@@ -1,4 +1,4 @@
-# Tensor multiplication benchmark
+# Tensor mul benchmark
 require("torch")
 
 torch.setdefaulttensortype('torch.FloatTensor')

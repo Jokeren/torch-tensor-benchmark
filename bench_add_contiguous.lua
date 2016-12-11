@@ -1,4 +1,4 @@
-# Tensor addition benchmark
+# Tensor add benchmark
 require("torch")
 
 torch.setdefaulttensortype('torch.FloatTensor')

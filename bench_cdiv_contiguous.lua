@@ -1,4 +1,4 @@
-# Tensor division benchmark
+# Tensor cdiv benchmark
 require("torch")
 
 torch.setdefaulttensortype('torch.FloatTensor')
