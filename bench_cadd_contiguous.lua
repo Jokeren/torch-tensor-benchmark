@@ -15,7 +15,7 @@ end
 print(tm:time().real)
 
 --sz_single * OMP_NUM_THREADS
-sz_multi = sz_single * 24
+sz_multi = sz_single * 12
 input1multi = torch.randn(sz_multi)
 input2multi = torch.randn(sz_multi)
 input3multi = torch.randn(sz_multi)
@@ -40,7 +40,7 @@ end
 print(tm:time().real)
 
 --sz_single * OMP_NUM_THREADS
-sz_multi = sz_single * 24
+sz_multi = sz_single * 12
 input1multi = torch.randn(sz_multi)
 input2multi = torch.randn(sz_multi)
 input3multi = torch.randn(sz_multi)

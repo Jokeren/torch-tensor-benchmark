@@ -27,6 +27,24 @@ contiguous double div single thread:
 contiguous double div multi-thread:
 0.028341054916382
 
+contiguous float cadd single thread:
+0.008249044418335
+contiguous float cadd multi-thread:
+0.0072178840637207
+contiguous double cadd single thread:
+0.0091269016265869
+contiguous double cadd multi-thread:
+0.012466192245483
+
+contiguous float cmul single thread:
+0.0087471008300781
+contiguous float cmul multi-thread:
+0.0069220066070557
+contiguous double cmul single thread:
+0.0098650455474854
+contiguous double cmul multi-thread:
+0.012078046798706
+
 ##AVX
 ------------------------
 contiguous float add single thread:
@@ -55,3 +73,22 @@ contiguous double div single thread:
 0.012603998184204
 contiguous double div multi-thread:
 0.014724016189575
+
+contiguous float cadd single thread:
+0.0070121288299561
+contiguous float cadd multi-thread:
+0.0058040618896484
+contiguous double cadd single thread:
+0.008234977722168
+contiguous double cadd multi-thread:
+0.010298013687134
+
+contiguous float cmul single thread:
+0.0072739124298096
+contiguous float cmul multi-thread:
+0.0056629180908203
+contiguous double cmul single thread:
+0.0083320140838623
+contiguous double cmul multi-thread:
+0.010403871536255
+
