@@ -4,29 +4,28 @@ require("torch")
 torch.setdefaulttensortype('torch.FloatTensor')
 initial_shape = torch.LongStorage({10, 10, 10, 10, 10, 10, 10});
 
-sz_single = 10000000;
-input1single = torch.randn(sz_single):resize(initial_shape);
-input1single = input1single:narrow(2,2,2)
-input1single = input1single:narrow(4,2,2)
-input1single = input1single:narrow(6,2,2)
-print("contiguous float fill single thread:")
+sz = 10000000;
+input1 = torch.randn(sz):resize(initial_shape);
+input1 = input1:narrow(4,2,2)
+input1 = input1:narrow(6,2,2)
+input2 = input1:clone()
+print("noncontiguous float fill:")
 tm = torch.Timer()
 for i=1,100 do
-   input1single:fill(0)
+   input2 = input1:fill(0)
 end
 print(tm:time().real)
 
 torch.setdefaulttensortype('torch.DoubleTensor')
 
-sz_single = 10000000;
-input1single = torch.randn(sz_single):resize(initial_shape);
-input1single = input1single:narrow(2,2,2)
-input1single = input1single:narrow(4,2,2)
-input1single = input1single:narrow(6,2,2)
-print("contiguous double fill single thread:")
+input1 = torch.randn(sz):resize(initial_shape);
+input1 = input1:narrow(4,2,2)
+input1 = input1:narrow(6,2,2)
+input2 = input1:clone()
+print("noncontiguous double fill:")
 tm = torch.Timer()
 for i=1,100 do
-   input1single:fill(0)
+   input2 = input1:fill(0)
 end
 print(tm:time().real)
 

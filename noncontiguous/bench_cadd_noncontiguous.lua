@@ -4,30 +4,29 @@ require("torch")
 torch.setdefaulttensortype('torch.FloatTensor')
 initial_shape = torch.LongStorage({10, 10, 10, 10, 10, 10, 10})
 
-sz_single = 10000000
-input1single = torch.randn(sz_single):resize(initial_shape)
-input1single = input1single:narrow(4,2,2)
-input1single = input1single:narrow(6,2,2)
-input2single = input1single:clone()
-input3single = input1single:clone()
-print("contiguous float cadd single thread:")
+sz = 10000000
+input1 = torch.randn(sz):resize(initial_shape)
+input1 = input1:narrow(4,2,2)
+input1 = input1:narrow(6,2,2)
+input2 = input1:clone()
+input3 = input1:clone()
+print("noncontiguous float cadd:")
 tm = torch.Timer()
 for i=1,100 do
-   input3single:add(input1single, input2single)
+   input3:add(input1, input2)
 end
 print(tm:time().real)
 
 torch.setdefaulttensortype('torch.DoubleTensor')
 
-sz_single = 10000000
-input1single = torch.randn(sz_single):resize(initial_shape)
-input1single = input1single:narrow(4,2,2)
-input1single = input1single:narrow(6,2,2)
-input2single = input1single:clone()
-input3single = input1single:clone()
-print("contiguous double cadd single thread:")
+input1 = torch.randn(sz):resize(initial_shape)
+input1 = input1:narrow(4,2,2)
+input1 = input1:narrow(6,2,2)
+input2 = input1:clone()
+input3 = input1:clone()
+print("noncontiguous double cadd:")
 tm = torch.Timer()
 for i=1,100 do
-   input3single:add(input1single, input2single)
+   input3:add(input1, input2)
 end
 print(tm:time().real)
