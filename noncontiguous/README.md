@@ -3,11 +3,13 @@ Multi-threading is not supported for `TH_TENSOR_APPLY`s. In the noncontiguous be
 
 ###Float
 *TH_TENSOR_APPLY*
+
 Function | Noncontiguous (s) | Optimized (s) |
 -------- | ---- | ---- |
 fill     | 0.012 | 0.003 |
 
 *TH_TENSOR_APPLY2*
+
 Function | Read Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
 -------- | --- | --- | --- | --- | --- | --- |
 add      |0.010 | **0.05** | 0.010 | **0.05** | 0.014 | **0.08**
@@ -16,6 +18,7 @@ div      |0.009 | **0.05** | 0.009 | **0.07** | 0.014 | **0.08**
 copy     |0.009 | **0.05** | 0.010 | **0.05** | 0.014 | **0.08**
 
 *TH_TENSOR_APPLY3*
+
 Function | Read One Noncontiguous (s) | Optimized (s) | Read Both Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
 -------- | --- | --- | --- | --- | --- | --- | --- | --- |
 cadd     | 0.010 | **0.007** | 0.015 | **0.010** | 0.010 | **0.007** | 0.020 | **0.013**
