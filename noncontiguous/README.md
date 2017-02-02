@@ -1,6 +1,6 @@
-# Torch Noncontiguous tensor Benchmarks
+# Torch Noncontiguous Tensor Benchmarks
 
-Multi-threading is not supported for TH_TENSOR_APPLY
+Multi-threading is not supported for `TH_TENSOR_APPLY`. 4^10 * 10 elements with 2 holes per vector.
 
 ###Float
 Function | Read One Noncontiguous (s) | Optimized (s) | Read Both Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
