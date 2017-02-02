@@ -5,16 +5,16 @@
 
 ##Functions
 
-`TH_TENSOR_APPLY`
+*TH_TENSOR_APPLY*
 - fill
 
-`TH_TENSOR_APPLY2`
+*TH_TENSOR_APPLY2*
 - add
 - mul
 - div
 - copy
 
-`TH_TENSOR_APPLY3`
+*TH_TENSOR_APPLY3*
 - cadd
 - cmul
 - cdiv
