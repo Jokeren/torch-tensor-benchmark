@@ -1,5 +1,5 @@
-# Torch Transposed Tensor Benchmark
-Multi-threading is not supported for `TH_TENSOR_APPLY`s. In the transposed benchmark, we set up large vectors (1e^7) and transpose the lowest dimension. In this way, we test the effects of optimzing stride accesses. Particularly, we directly apply contiguous operations for `TH_TENSOR_APPLY`. And instead of accessing contiguous elements in each iteration, we access the last contiguous section without manage the counter array. Therefore, with the reduction of extra operations, we achieve at most three four times speedup.
+ # Torch Transposed Tensor Benchmark
+Multi-threading is not supported for `TH_TENSOR_APPLY`s. In the transposed benchmark, we set up large vectors (1e^7) and transpose the lowest dimension. In this way, we test the effects of optimzing stride accesses. Particularly, we directly apply contiguous operations for `TH_TENSOR_APPLY` with `fill`. And instead of accessing contiguous elements in each iteration, we access the last contiguous section without updating dimension counters. Therefore, with the reduction of extra operations, we achieve at most three four times speedup.
 
 ###Float
 *TH_TENSOR_APPLY*
