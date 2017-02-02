@@ -4,13 +4,13 @@ Multi-threading is not supported for `TH_TENSOR_APPLY`s. In the transposed bench
 ###Float
 *TH_TENSOR_APPLY*
 
-Function | Noncontiguous (s) | Optimized (s) |
+Function | Transposed (s) | Optimized (s) |
 -------- | ---- | ---- |
 fill     | 21.3 | 0.02 |
 
 *TH_TENSOR_APPLY2*
 
-Function | Read Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
+Function | Read Transposed (s) | Optimized (s) | Store Transposed (s) | Optimized (s) | All Transposed (s) | Optimized (s)
 -------- | --- | --- | --- | --- | --- | --- |
 add      | 8.8 | **3.2** | 21.9 | **4.4** | 22.2 | **6.2**
 mul      | 8.8 | **3.2** | 21.9 | **4.4** | 22.2 | **6.2** 
@@ -19,7 +19,7 @@ copy     | 8.8 | **3.2** | 21.9 | **4.2** | 22.2 | **5.8**
 
 *TH_TENSOR_APPLY3*
 
-Function | Read One Noncontiguous (s) | Optimized (s) | Read Both Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
+Function | Read One Transposed (s) | Optimized (s) | Read Both Transposed (s) | Optimized (s) | Store Transposed (s) | Optimized (s) | All Transposed (s) | Optimized (s)
 -------- | --- | --- | --- | --- | --- | --- | --- | --- |
 cadd     | 11.5 | **4.6** | 14.4 | **5.7** | 22.1 | **5.2** | 24.1 | **9.2**
 cmul     | 11.5 | **4.6** | 15.1 | **5.9** | 22.1 | **5.2** | 23.8 | **9.2**
