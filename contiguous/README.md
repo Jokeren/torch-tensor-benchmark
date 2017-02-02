@@ -4,13 +4,13 @@ This benchmark shows the performance of contiguous operations with multi-threadi
 ###Float
 Function | SSE (s) | AVX (s) |
 -------- | --- | --- |
+fill |0.39 | 0.02
 add |0.22 | 0.25
 mul |0.24 | 0.25
 div |0.24 | 0.25
+copy |0.72 | 0.65
 cadd |0.48 | 0.47
 cmul |0.48 | 0.44
 cdiv |0.48 | 0.44
-fill |0.39 | 0.02
-copy |0.72 | 0.65
 
 The significant benefits of `fill` operation comes from enabling multi-threading.

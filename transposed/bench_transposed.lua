@@ -6,7 +6,7 @@ local sz = 10000000
 
 function test_fill(input1)
    for i=1,100 do
-      input1:fill(0);
+      input1:fill(0)
    end
 end
 
@@ -30,25 +30,25 @@ end
 
 function test_copy(input1, input2)
    for i=1,100 do
-      input2:copy(input1);
+      input2:copy(input1)
    end
 end
 
 function test_cadd(input1, input2, input3)
    for i=1,100 do
-      input3:add(input1, input2);
+      input3:add(input1, input2)
    end
 end
 
 function test_cmul(input1, input2, input3)
    for i=1,100 do
-      input3:cmul(input1, input2);
+      input3:cmul(input1, input2)
    end
 end
 
 function test_cdiv(input1, input2, input3)
    for i=1,100 do
-      input3:cdiv(input1, input2);
+      input3:cdiv(input1, input2)
    end
 end
 
@@ -118,26 +118,26 @@ function test_apply3_cases(function_call)
 end
 
 function tester()
-   --local test_apply_functions = {
-   --   ["fill"] = test_fill
-   --}
+   local test_apply_functions = {
+      ["fill"] = test_fill
+   }
 
-   --for name, func in pairs(test_apply_functions) do
-   --   print(name)
-   --   test_apply_cases(func)
-   --end
+   for name, func in pairs(test_apply_functions) do
+      print(name)
+      test_apply_cases(func)
+   end
 
-   --local test_apply2_functions = {
-   --   ["add"] = test_add,
-   --   ["mul"] = test_mul,
-   --   ["div"] = test_div,
-   --   ["copy"] = test_copy
-   --}
+   local test_apply2_functions = {
+      ["add"] = test_add,
+      ["mul"] = test_mul,
+      ["div"] = test_div,
+      ["copy"] = test_copy
+   }
 
-   --for name, func in pairs(test_apply2_functions) do
-   --   print(name)
-   --   test_apply2_cases(func)
-   --end
+   for name, func in pairs(test_apply2_functions) do
+      print(name)
+      test_apply2_cases(func)
+   end
 
    local test_apply3_functions = {
       ["cadd"] = test_cadd,
