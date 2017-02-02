@@ -1,15 +1,23 @@
-# Torch Noncontiguous Tensor Benchmarks
-
-Multi-threading is not supported for `TH_TENSOR_APPLY`. 4^10 * 10 elements with 2 holes per vector.
+# Torch Noncontiguous Tensor Benchmark
+Multi-threading is not supported for `TH_TENSOR_APPLY`s. In the noncontiguous benchmark, we test the benefits of dimension collapsing. Hence, we use small size vectors (2^16) in each test case. The optimized implementations outperform the origin ones with up to 100%, as the executions of dimension counters are reduced.
 
 ###Float
+*TH_TENSOR_APPLY*
+Function | Noncontiguous (s) | Optimized (s) |
+-------- | ---- | ---- |
+fill     | 0.012 | 0.003 |
+
+*TH_TENSOR_APPLY2*
+Function | Read Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
+-------- | --- | --- | --- | --- | --- | --- |
+add      |0.010 | **0.05** | 0.010 | **0.05** | 0.014 | **0.08**
+mul      |0.010 | **0.05** | 0.010 | **0.05** | 0.014 | **0.08** 
+div      |0.009 | **0.05** | 0.009 | **0.07** | 0.014 | **0.08**
+copy     |0.009 | **0.05** | 0.010 | **0.05** | 0.014 | **0.08**
+
+*TH_TENSOR_APPLY3*
 Function | Read One Noncontiguous (s) | Optimized (s) | Read Both Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
 -------- | --- | --- | --- | --- | --- | --- | --- | --- |
-add |0.26 | **0.24** | | | 0.11 | **0.04** | 0.27 | **0.25**
-cadd |0.43| **0.42** |0.49|**0.48** |0.42| 0.42 | 0.56 | **0.55**
-mul |0.27 | **0.24** | | | 0.12 | **0.04** | 0.27 | **0.25** 
-cmul |0.43| **0.42** |0.49|**0.48** |0.44|**0.41**|0.56| **0.55**
-div |0.56 | 0.56     | | |0.55  | **0.15** | 0.56 | 0.56
-cdiv |0.59| 0.60     |0.62|0.62     |0.58| 0.58   |0.66| **0.65**
-fill |0.15| 0.15     | | |0.04  | 0.04     | 0.15 | 0.15
-copy |0.27| **0.26** | | |0.27  | 0.27     | 0.40 | 0.40
+cadd     | 0.010 | **0.007** | 0.015 | **0.010** | 0.010 | **0.007** | 0.020 | **0.013**
+cmul     | 0.010 | **0.007** | 0.015 | **0.010** | 0.010 | **0.007** | 0.020 | **0.013**
+cdiv     | 0.010 | **0.007** | 0.015 | **0.010** | 0.010 | **0.007** | 0.020 | **0.014**
