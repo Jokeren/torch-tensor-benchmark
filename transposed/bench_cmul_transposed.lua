@@ -16,7 +16,6 @@ print(tm:time().real)
 
 torch.setdefaulttensortype('torch.DoubleTensor')
 
-sz = 10000000
 input1 = torch.randn(sz):resize(10000, 1000):transpose(1,2)
 input2 = torch.randn(sz):resize(10000, 1000):transpose(1,2)
 input3 = torch.randn(sz):resize(10000, 1000):transpose(1,2)

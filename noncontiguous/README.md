@@ -1,29 +1,15 @@
-# Contiguous Benchmarks
+# Torch Noncontiguous tensor Benchmarks
 
-##Single Thread
+Multi-threading is not supported for TH_TENSOR_APPLY
 
 ###Float
-Function | Initial (s) | Collapsed (s) 
--------- | --- | --- 
-add |0.72 | 0.65 
-cadd |1.38 | 1.20 
-mul |0.76 | 0.69 
-cmul |1.31 | 1.22
-div |0.89 | 0.80
-cdiv |1.38 |1.27
-fill |0.77 | 0.69
-copy |0.99 | 1.02
-
-###Double
-Function | Initial (s) | Collapsed (s) 
--------- | --- | --- 
-add |0.99 | 0.90
-cadd |2.02 | 1.98
-mul |0.99 | 0.90
-cmul |2.08 | 2.06
-div |1.03 | 0.98
-cdiv |2.11 | 2.11
-fill |1.33 | 1.28
-copy |1.66 | 1.66
-
-##Multi-Thread (not support)
+Function | Read One Noncontiguous (s) | Optimized (s) | Read Both Noncontiguous (s) | Optimized (s) | Store Noncontiguous (s) | Optimized (s) | All Noncontiguous (s) | Optimized (s)
+-------- | --- | --- | --- | --- | --- | --- | --- | --- |
+add |0.26 | **0.24** | | | 0.11 | **0.04** | 0.27 | **0.25**
+cadd |0.43| **0.42** |0.49|**0.48** |0.42| 0.42 | 0.56 | **0.55**
+mul |0.27 | **0.24** | | | 0.12 | **0.04** | 0.27 | **0.25** 
+cmul |0.43| **0.42** |0.49|**0.48** |0.44|**0.41**|0.56| **0.55**
+div |0.56 | 0.56     | | |0.55  | **0.15** | 0.56 | 0.56
+cdiv |0.59| 0.60     |0.62|0.62     |0.58| 0.58   |0.66| **0.65**
+fill |0.15| 0.15     | | |0.04  | 0.04     | 0.15 | 0.15
+copy |0.27| **0.26** | | |0.27  | 0.27     | 0.40 | 0.40
